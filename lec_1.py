@@ -16,6 +16,7 @@ my_list.append('c')
 my_set = set()
 my_set.add('a')
 my_set.add('b')
+my_set.add('Z')
 my_set.add('c')
 my_set.add('A')
 
@@ -34,4 +35,10 @@ for word in my_list:
         my_new_list.append('word: ' + word)
 
 my_new_list_inline = [('word: ' + word) for word in my_list if word != 'a']
+
+my_test = dict()
+for word in my_dictionary.keys():
+    my_test['word' + word] = word
+    
+my_test['worda_1'] = 'override'
 
