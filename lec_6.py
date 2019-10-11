@@ -47,7 +47,7 @@ from bs4 import BeautifulSoup
 import re
 from nltk import word_tokenize
 
-# Build a function
+#Build a function
 def fetch_urls(query, cnt):
     ua = UserAgent()
     links = list()
