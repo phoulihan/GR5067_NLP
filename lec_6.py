@@ -42,13 +42,15 @@ print(tmp_text)
 # pip install pyyaml ua-parser user-agents fake-useragent
 
 import requests
-from fake_useragents import UserAgent
+from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 import re
+from nltk import word_tokenize
 
 # Build a function
 def fetch_urls(query, cnt):
     ua = UserAgent()
+    links = list()
     
     # Reconstruct the Google Search Engine
     google_url = 'https://www.google.com/search?q=' + query + '&num=' + str(cnt)
@@ -64,7 +66,7 @@ def fetch_urls(query, cnt):
         # This is a special code the uses JavaScript (ZINbcc) to capture "hits" from the Google Search
         result_div = soup.find_all('div', attrs = {'class': 'ZINbbc'})
         
-        links = list()
+        
        
         for r in result_div:
         
